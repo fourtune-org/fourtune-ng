@@ -3,6 +3,7 @@ import path from "node:path"
 
 // todo: check mandatory fields are there
 // todo: check fourtune config version compatibility
+// todo: validate config
 export async function readFourtuneConfigurationFile(
 	projectRoot: string
 ) : Promise<Required<FourtuneConfig>> {
