@@ -9,10 +9,11 @@ export async function createInit(
 	projectRoot: string,
 	config: FourtuneConfig,
 	options: Required<FourtuneNodeAPIOptions>,
-	_emitEvent: _EmitEventType<FourtuneEvents>
+	_emitEvent: _EmitEventType<FourtuneEvents>,
+	_projectReference: FourtuneProject
 ) : Promise<FourtuneProject["init"]> {
 	return async function init() : InitRet {
-		const session = await createFourtuneSession()
+		const session = await createFourtuneSession(_projectReference)
 		const compile : Compile = async () : ReturnType<Compile> => {
 			return {
 				messages: [],

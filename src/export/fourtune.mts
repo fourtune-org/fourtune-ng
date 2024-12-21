@@ -23,20 +23,22 @@ export async function fourtune(
 		...options
 	}
 
-	const project = {
+	const project : Omit<FourtuneProject, "init"> = {
 		root: projectRoot,
 		config,
-
-		init: await createInit(
-			projectRoot,
-			config,
-			optionsWithDefaults,
-			_emitEvent
-		),
 
 		on,
 		removeEventListener
 	}
 
-	return project
+	// @ts-ignore: next-line
+	project.init = await createInit(
+		projectRoot,
+		config,
+		optionsWithDefaults,
+		_emitEvent,
+		project as FourtuneProject
+	)
+
+	return project as FourtuneProject
 }
