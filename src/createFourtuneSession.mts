@@ -1,4 +1,5 @@
-import type {FourtuneNodeAPIOptions, FourtuneConfig, FourtuneProject, FourtuneSession} from "@fourtune-types/fourtune/v0"
+import type {FourtuneNodeAPIOptions, FourtuneConfig, FourtuneProject, FourtuneSession, FourtuneEvents} from "@fourtune-types/fourtune/v0"
+import type {_EmitEventType} from "@aniojs/event-emitter"
 import type {InternalSessionData} from "#~src/InternalSessionData.d.mts"
 
 import {initializeEmit} from "./session/initializeEmit.mts"
@@ -14,9 +15,10 @@ export async function createFourtuneSession(
 	fourtuneOptions: Required<FourtuneNodeAPIOptions>,
 	projectRoot: string,
 	projectConfig: FourtuneConfig,
+	_emitEvent: _EmitEventType<FourtuneEvents>,
 	currentProject: FourtuneProject
 ) : Promise<FourtuneSession> {
-	let sessionData : InternalSessionData = {}
+	let sessionData : InternalSessionData = {_emitEvent}
 
 	return {
 		getProject: () => currentProject,

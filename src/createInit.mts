@@ -17,6 +17,7 @@ export async function createInit(
 			fourtuneOptions,
 			projectRoot,
 			projectConfig,
+			_emitEvent,
 			_projectReference
 		)
 
