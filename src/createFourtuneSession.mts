@@ -18,7 +18,9 @@ export async function createFourtuneSession(
 	_emitEvent: _EmitEventType<FourtuneEvents>,
 	currentProject: FourtuneProject
 ) : Promise<FourtuneSession> {
-	let sessionData : InternalSessionData = {_emitEvent}
+	let sessionData : InternalSessionData = {
+		_emitEvent
+	}
 
 	return {
 		getProject: () => currentProject,
