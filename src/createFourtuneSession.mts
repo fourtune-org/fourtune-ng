@@ -1,4 +1,4 @@
-import type {FourtuneProject, FourtuneSession} from "@fourtune-types/fourtune/v0"
+import type {FourtuneNodeAPIOptions, FourtuneConfig, FourtuneProject, FourtuneSession} from "@fourtune-types/fourtune/v0"
 
 import {initializeEmit} from "./session/initializeEmit.mts"
 import {initializeRealm} from "./session/initializeRealm.mts"
@@ -10,6 +10,9 @@ import {initializeProducts} from "./session/initializeProducts.mts"
 import {initializePaths} from "./session/initializePaths.mts"
 
 export async function createFourtuneSession(
+	fourtuneOptions: Required<FourtuneNodeAPIOptions>,
+	projectRoot: string,
+	projectConfig: FourtuneConfig,
 	currentProject: FourtuneProject
 ) : Promise<FourtuneSession> {
 	return {

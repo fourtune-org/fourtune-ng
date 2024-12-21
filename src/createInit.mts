@@ -14,6 +14,9 @@ export async function createInit(
 ) : Promise<FourtuneProject["init"]> {
 	return async function init() : InitRet {
 		const session = await createFourtuneSession(
+			fourtuneOptions,
+			projectRoot,
+			projectConfig,
 			_projectReference
 		)
 
