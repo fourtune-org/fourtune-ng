@@ -19,6 +19,7 @@ export async function fourtune(
 
 	const optionsWithDefaults : Required<FourtuneNodeAPIOptions> = {
 		...getDefaultFourtuneOptions(),
+		...config.fourtune.defaultOptions,
 		...options
 	}
 
