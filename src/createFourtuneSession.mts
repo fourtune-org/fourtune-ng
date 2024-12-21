@@ -8,6 +8,7 @@ import {initializeHooks} from "./session/initializeHooks.mts"
 import {initializeInput} from "./session/initializeInput.mts"
 import {initializeAutogenerate} from "./session/initializeAutogenerate.mts"
 import {initializeObjects} from "./session/initializeObjects.mts"
+import {initializePaths} from "./session/initializePaths.mts"
 
 export async function createFourtuneSession(
 	currentProject: FourtuneProject
@@ -18,6 +19,8 @@ export async function createFourtuneSession(
 		hooks: await initializeHooks(),
 		input: await initializeInput(),
 		autogenerate: await initializeAutogenerate(),
-		objects: await initializeObjects()
+		objects: await initializeObjects(),
+
+		paths: await initializePaths()
 	}
 }
