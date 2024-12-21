@@ -31,6 +31,11 @@ export async function initialize(
 			assetFiles
 		},
 
+		input: {
+			sourceFiles: [],
+			assetFiles: []
+		},
+
 		_emitEvent
 	}
 }

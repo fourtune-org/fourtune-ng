@@ -1,5 +1,5 @@
 import type {_EmitEventType} from "@aniojs/event-emitter"
-import type {FourtuneEvents, FourtuneConfig} from "@fourtune-types/fourtune/v0"
+import type {FourtuneEvents, FourtuneConfig, FourtuneInputFile} from "@fourtune-types/fourtune/v0"
 import type {ScandirEntry} from "@aniojs/node-fs"
 
 export type InternalState = {
@@ -13,5 +13,10 @@ export type InternalState = {
 	rawInput: {
 		sourceFiles: ScandirEntry[]
 		assetFiles: ScandirEntry[]
+	}
+
+	input: {
+		sourceFiles: FourtuneInputFile[]
+		assetFiles: FourtuneInputFile[]
 	}
 }
