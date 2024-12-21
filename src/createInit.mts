@@ -1,5 +1,6 @@
 import type {FourtuneNodeAPIOptions, FourtuneProject, FourtuneConfig, FourtuneSession, FourtuneEvents} from "@fourtune-types/fourtune/v0"
 import type {_EmitEventType} from "@aniojs/event-emitter"
+import {createFourtuneSession} from "./createFourtuneSession.mts"
 
 type InitRet = ReturnType<FourtuneProject["init"]>
 type Compile = Awaited<InitRet>["compile"]
@@ -11,7 +12,7 @@ export async function createInit(
 	_emitEvent: _EmitEventType<FourtuneEvents>
 ) : Promise<FourtuneProject["init"]> {
 	return async function init() : InitRet {
-		const session : FourtuneSession = {} as FourtuneSession
+		const session = await createFourtuneSession()
 		const compile : Compile = async () : ReturnType<Compile> => {
 			return {
 				messages: [],
