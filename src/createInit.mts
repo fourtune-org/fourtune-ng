@@ -8,7 +8,7 @@ type Compile = Awaited<InitRet>["compile"]
 export async function createInit(
 	fourtuneOptions: Required<FourtuneNodeAPIOptions>,
 	projectRoot: string,
-	config: FourtuneConfig,
+	projectConfig: FourtuneConfig,
 	_emitEvent: _EmitEventType<FourtuneEvents>,
 	_projectReference: FourtuneProject
 ) : Promise<FourtuneProject["init"]> {
@@ -24,7 +24,7 @@ export async function createInit(
 			}
 		}
 
-		console.log(projectRoot, config.realm.name, fourtuneOptions.stdIOLogs)
+		console.log(projectRoot, projectConfig.realm.name, fourtuneOptions.stdIOLogs)
 
 		return {
 			session,
