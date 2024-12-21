@@ -1,8 +1,8 @@
 import type {FourtuneSession, FourtuneObjectGenerator} from "@fourtune-types/fourtune/v0"
-import type {InternalSessionData} from "#~src/InternalSessionData.d.mts"
+import type {InternalState} from "#~src/InternalState.d.mts"
 
 export async function initializeObjects(
-	sessionData: InternalSessionData
+	internalState: InternalState
 ) : Promise<FourtuneSession["objects"]> {
 	return {
 		addObject(

@@ -1,7 +1,7 @@
 import type {_EmitEventType} from "@aniojs/event-emitter"
 import type {FourtuneEvents, FourtuneConfig} from "@fourtune-types/fourtune/v0"
 
-export type InternalSessionData = {
+export type InternalState = {
 	project: {
 		root: string
 		config: FourtuneConfig

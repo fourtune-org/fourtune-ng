@@ -1,6 +1,6 @@
 import type {FourtuneNodeAPIOptions, FourtuneConfig, FourtuneProject, FourtuneSession, FourtuneEvents} from "@fourtune-types/fourtune/v0"
 import type {_EmitEventType} from "@aniojs/event-emitter"
-import type {InternalSessionData} from "#~src/InternalSessionData.d.mts"
+import type {InternalState} from "#~src/InternalState.d.mts"
 
 import {initializeEmit} from "./session/initializeEmit.mts"
 import {initializeRealm} from "./session/initializeRealm.mts"
@@ -18,7 +18,7 @@ export async function createFourtuneSession(
 	_emitEvent: _EmitEventType<FourtuneEvents>,
 	currentProject: FourtuneProject
 ) : Promise<FourtuneSession> {
-	let sessionData : InternalSessionData = {
+	let internalState : InternalState = {
 		project: {
 			root: projectRoot,
 			config: projectConfig
@@ -30,13 +30,13 @@ export async function createFourtuneSession(
 	return {
 		getProject: () => currentProject,
 
-		emit: await initializeEmit(sessionData),
-		realm: await initializeRealm(sessionData),
-		hooks: await initializeHooks(sessionData),
-		input: await initializeInput(sessionData),
-		autogenerate: await initializeAutogenerate(sessionData),
-		objects: await initializeObjects(sessionData),
-		products: await initializeProducts(sessionData),
-		paths: await initializePaths(sessionData)
+		emit: await initializeEmit(internalState),
+		realm: await initializeRealm(internalState),
+		hooks: await initializeHooks(internalState),
+		input: await initializeInput(internalState),
+		autogenerate: await initializeAutogenerate(internalState),
+		objects: await initializeObjects(internalState),
+		products: await initializeProducts(internalState),
+		paths: await initializePaths(internalState)
 	}
 }
