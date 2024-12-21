@@ -6,11 +6,11 @@ export async function initializeEmit(
 ) : Promise<FourtuneSession["emit"]> {
 	return {
 		warning(id: string|undefined, message: string) {
-
+			sessionData._emitEvent("warning", {id, message})
 		},
 
 		error(id: string|undefined, message: string) {
-
+			sessionData._emitEvent("error", {id, message})
 		}
 	}
 }
