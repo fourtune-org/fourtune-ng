@@ -5,6 +5,7 @@ import type {
 } from "@fourtune-types/fourtune/v0"
 
 import {createEventEmitter} from "@aniojs/event-emitter"
+import {getDefaultFourtuneOptions} from "#~src/getDefaultFourtuneOptions.mts"
 import {createInit} from "#~src/createInit.mts"
 import {readFourtuneConfigurationFile} from "#~src/readFourtuneConfigurationFile.mts"
 
@@ -17,7 +18,7 @@ export async function fourtune(
 	const config = await readFourtuneConfigurationFile(projectRoot)
 
 	const optionsWithDefaults : Required<FourtuneNodeAPIOptions> = {
-		stdIOLogs: true,
+		...getDefaultFourtuneOptions(),
 		...options
 	}
 
