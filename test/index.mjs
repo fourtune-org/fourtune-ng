@@ -14,4 +14,4 @@ console.log("got project", project)
 
 const {session, compile} = await project.init()
 
-console.log("got session", session)
+console.log("got session", session, session.getProject() === project)
