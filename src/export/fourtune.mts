@@ -33,9 +33,9 @@ export async function fourtune(
 
 	// @ts-ignore: next-line
 	project.init = await createInit(
+		optionsWithDefaults,
 		projectRoot,
 		config,
-		optionsWithDefaults,
 		_emitEvent,
 		project as FourtuneProject
 	)

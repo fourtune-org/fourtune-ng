@@ -6,9 +6,9 @@ type InitRet = ReturnType<FourtuneProject["init"]>
 type Compile = Awaited<InitRet>["compile"]
 
 export async function createInit(
+	options: Required<FourtuneNodeAPIOptions>,
 	projectRoot: string,
 	config: FourtuneConfig,
-	options: Required<FourtuneNodeAPIOptions>,
 	_emitEvent: _EmitEventType<FourtuneEvents>,
 	_projectReference: FourtuneProject
 ) : Promise<FourtuneProject["init"]> {
