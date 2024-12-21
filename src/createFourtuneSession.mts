@@ -19,6 +19,11 @@ export async function createFourtuneSession(
 	currentProject: FourtuneProject
 ) : Promise<FourtuneSession> {
 	let sessionData : InternalSessionData = {
+		project: {
+			root: projectRoot,
+			config: projectConfig
+		},
+
 		_emitEvent
 	}
 
