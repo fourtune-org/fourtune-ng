@@ -6,7 +6,7 @@ import type {
 
 import {createEventEmitter} from "@aniojs/event-emitter"
 import {getDefaultFourtuneOptions} from "#~src/getDefaultFourtuneOptions.mts"
-import {createInit} from "#~src/createInit.mts"
+import {initFactory} from "#~src/initFactory.mts"
 import {readFourtuneConfigurationFile} from "#~src/readFourtuneConfigurationFile.mts"
 
 export async function fourtune(
@@ -32,7 +32,7 @@ export async function fourtune(
 	}
 
 	// @ts-ignore: next-line
-	project.init = await createInit(
+	project.init = await initFactory(
 		optionsWithDefaults,
 		projectRoot,
 		config,

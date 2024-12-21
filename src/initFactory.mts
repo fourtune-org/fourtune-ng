@@ -7,7 +7,7 @@ import {initialize} from "./initialize.mts"
 type InitRet = ReturnType<FourtuneProject["init"]>
 type Compile = Awaited<InitRet>["compile"]
 
-export async function createInit(
+export async function initFactory(
 	fourtuneOptions: Required<FourtuneNodeAPIOptions>,
 	projectRoot: string,
 	projectConfig: FourtuneConfig,
