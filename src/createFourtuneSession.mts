@@ -1,4 +1,5 @@
 import type {FourtuneNodeAPIOptions, FourtuneConfig, FourtuneProject, FourtuneSession} from "@fourtune-types/fourtune/v0"
+import type {InternalSessionData} from "#~src/InternalSessionData.d.mts"
 
 import {initializeEmit} from "./session/initializeEmit.mts"
 import {initializeRealm} from "./session/initializeRealm.mts"
@@ -15,16 +16,18 @@ export async function createFourtuneSession(
 	projectConfig: FourtuneConfig,
 	currentProject: FourtuneProject
 ) : Promise<FourtuneSession> {
+	let sessionData : InternalSessionData = {}
+
 	return {
 		getProject: () => currentProject,
 
-		emit: await initializeEmit(),
-		realm: await initializeRealm(),
-		hooks: await initializeHooks(),
-		input: await initializeInput(),
-		autogenerate: await initializeAutogenerate(),
-		objects: await initializeObjects(),
-		products: await initializeProducts(),
-		paths: await initializePaths()
+		emit: await initializeEmit(sessionData),
+		realm: await initializeRealm(sessionData),
+		hooks: await initializeHooks(sessionData),
+		input: await initializeInput(sessionData),
+		autogenerate: await initializeAutogenerate(sessionData),
+		objects: await initializeObjects(sessionData),
+		products: await initializeProducts(sessionData),
+		paths: await initializePaths(sessionData)
 	}
 }

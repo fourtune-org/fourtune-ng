@@ -1,7 +1,8 @@
 import type {FourtuneSession, FourtuneConfigAutogenerator} from "@fourtune-types/fourtune/v0"
+import type {InternalSessionData} from "#~src/InternalSessionData.d.mts"
 
 export async function initializeAutogenerate(
-
+	sessionData: InternalSessionData
 ) : Promise<FourtuneSession["autogenerate"]> {
 	return {
 		addFourtuneFile(

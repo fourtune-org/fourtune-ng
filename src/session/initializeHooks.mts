@@ -4,8 +4,10 @@ import type {
 	FourtuneHookFunction
 } from "@fourtune-types/fourtune/v0"
 
-export async function initializeHooks(
+import type {InternalSessionData} from "#~src/InternalSessionData.d.mts"
 
+export async function initializeHooks(
+	sessionData: InternalSessionData
 ) : Promise<FourtuneSession["hooks"]> {
 	return {
 		register(
