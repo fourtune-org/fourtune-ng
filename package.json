@@ -1,0 +1,27 @@
+{
+  "name": "fourtune-ng",
+  "version": "0.0.0",
+  "author": "Anio Software <info@anio.software>",
+  "description": " A project builder written in TypeScript.",
+  "license": "MIT",
+  "exports": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fourtune-org/fourtune.git"
+  },
+  "type": "package",
+  "devDependencies": {
+    "@aniojs/event-emitter": "^0.0.7",
+    "@fourtune-types/fourtune": "^0.0.5",
+    "@fourtune/core": "^0.1101.0",
+    "@fourtune/realm-js": "^0.31010.0",
+    "fourtune": "^0.30000.1"
+  },
+  "scripts": {
+    "prepare": "./node_modules/.bin/fourtune ."
+  },
+  "files": [
+    "./dist/"
+  ],
+  "private": true
+}
