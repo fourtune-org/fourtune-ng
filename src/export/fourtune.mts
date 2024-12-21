@@ -23,7 +23,7 @@ export async function fourtune(
 		...options
 	}
 
-	return {
+	const project = {
 		root: projectRoot,
 		config,
 
@@ -37,4 +37,6 @@ export async function fourtune(
 		on,
 		removeEventListener
 	}
+
+	return project
 }
