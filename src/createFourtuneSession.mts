@@ -8,6 +8,7 @@ import {initializeHooks} from "./session/initializeHooks.mts"
 import {initializeInput} from "./session/initializeInput.mts"
 import {initializeAutogenerate} from "./session/initializeAutogenerate.mts"
 import {initializeObjects} from "./session/initializeObjects.mts"
+import {initializeProducts} from "./session/initializeProducts.mts"
 import {initializePaths} from "./session/initializePaths.mts"
 
 export async function createFourtuneSession(
@@ -20,7 +21,7 @@ export async function createFourtuneSession(
 		input: await initializeInput(),
 		autogenerate: await initializeAutogenerate(),
 		objects: await initializeObjects(),
-
+		products: await initializeProducts(),
 		paths: await initializePaths()
 	}
 }
