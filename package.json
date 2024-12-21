@@ -12,6 +12,7 @@
   "type": "package",
   "devDependencies": {
     "@aniojs/event-emitter": "^0.0.7",
+    "@aniojs/node-fs": "^0.3.1",
     "@fourtune-types/fourtune": "^0.0.10",
     "@fourtune/core": "^0.1101.0",
     "@fourtune/realm-js": "^0.31010.0",
