@@ -6,6 +6,7 @@ import {initializeEmit} from "./session/initializeEmit.mts"
 import {initializeRealm} from "./session/initializeRealm.mts"
 import {initializeHooks} from "./session/initializeHooks.mts"
 import {initializeInput} from "./session/initializeInput.mts"
+import {initializeAutogenerate} from "./session/initializeAutogenerate.mts"
 
 export async function createFourtuneSession(
 	currentProject: FourtuneProject
@@ -14,6 +15,7 @@ export async function createFourtuneSession(
 		emit: await initializeEmit(),
 		realm: await initializeRealm(),
 		hooks: await initializeHooks(),
-		input: await initializeInput()
+		input: await initializeInput(),
+		autogenerate: await initializeAutogenerate()
 	}
 }
