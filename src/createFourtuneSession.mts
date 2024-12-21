@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 import type {FourtuneProject, FourtuneSession} from "@fourtune-types/fourtune/v0"
 
 import {initializeEmit} from "./session/initializeEmit.mts"
@@ -15,6 +13,8 @@ export async function createFourtuneSession(
 	currentProject: FourtuneProject
 ) : Promise<FourtuneSession> {
 	return {
+		getProject: () => currentProject,
+
 		emit: await initializeEmit(),
 		realm: await initializeRealm(),
 		hooks: await initializeHooks(),
