@@ -13,7 +13,10 @@ export async function createInit(
 	_projectReference: FourtuneProject
 ) : Promise<FourtuneProject["init"]> {
 	return async function init() : InitRet {
-		const session = await createFourtuneSession(_projectReference)
+		const session = await createFourtuneSession(
+			_projectReference
+		)
+
 		const compile : Compile = async () : ReturnType<Compile> => {
 			return {
 				messages: [],
