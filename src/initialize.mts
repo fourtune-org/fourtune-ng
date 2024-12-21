@@ -1,6 +1,6 @@
 import type {FourtuneNodeAPIOptions, FourtuneConfig, FourtuneProject, FourtuneEvents} from "@fourtune-types/fourtune/v0"
 import type {_EmitEventType} from "@aniojs/event-emitter"
-import type {InternalState} from "#~src/InternalState.d.mts"
+import type {InternalState, FileToAutogenerate} from "#~src/InternalState.d.mts"
 import path from "node:path"
 import {scandir} from "@aniojs/node-fs"
 
@@ -20,6 +20,8 @@ export async function initialize(
 		}
 	)
 
+	const filesToAutogenerate : FileToAutogenerate[] = []
+
 	return {
 		project: {
 			root: projectRoot,
@@ -35,6 +37,8 @@ export async function initialize(
 			sourceFiles: [],
 			assetFiles: []
 		},
+
+		filesToAutogenerate,
 
 		_emitEvent
 	}

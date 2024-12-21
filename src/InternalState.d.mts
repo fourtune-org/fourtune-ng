@@ -1,6 +1,17 @@
 import type {_EmitEventType} from "@aniojs/event-emitter"
-import type {FourtuneEvents, FourtuneConfig, FourtuneInputFile} from "@fourtune-types/fourtune/v0"
+import type {
+	FourtuneEvents,
+	FourtuneConfig,
+	FourtuneInputFile,
+	FourtuneConfigAutogenerator
+} from "@fourtune-types/fourtune/v0"
 import type {ScandirEntry} from "@aniojs/node-fs"
+
+export type FileToAutogenerate = {
+	filePath: string,
+	category: string,
+	generator: FourtuneConfigAutogenerator<string>
+}
 
 export type InternalState = {
 	project: {
@@ -19,4 +30,6 @@ export type InternalState = {
 		sourceFiles: FourtuneInputFile[]
 		assetFiles: FourtuneInputFile[]
 	}
+
+	filesToAutogenerate: FileToAutogenerate[]
 }
