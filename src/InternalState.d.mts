@@ -3,14 +3,14 @@ import type {
 	FourtuneEvents,
 	FourtuneConfig,
 	FourtuneInputFile,
-	FourtuneConfigAutogenerator
+	FourtuneAutoFileGenerator
 } from "@fourtune-types/fourtune/v0"
 import type {ScandirEntry} from "@aniojs/node-fs"
 
 export type FileToAutogenerate = {
 	filePath: string,
 	category: string,
-	generator: FourtuneConfigAutogenerator<string>
+	generator: FourtuneAutoFileGenerator
 }
 
 export type InternalState = {

@@ -22,6 +22,16 @@ export async function initialize(
 
 	const filesToAutogenerate : FileToAutogenerate[] = []
 
+	for (const key in projectConfig.autogenerate) {
+		const generator = projectConfig.autogenerate[key]
+
+		filesToAutogenerate.push({
+			filePath: key,
+			category: "user",
+			generator
+		})
+	}
+
 	return {
 		project: {
 			root: projectRoot,
