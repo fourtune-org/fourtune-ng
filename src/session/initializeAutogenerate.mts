@@ -1,4 +1,4 @@
-import type {FourtuneSession, FourtuneConfigAutogenerator} from "@fourtune-types/fourtune/v0"
+import type {FourtuneSession, FourtuneAutoFileGenerator} from "@fourtune-types/fourtune/v0"
 import type {InternalState} from "#~src/InternalState.d.mts"
 
 export async function initializeAutogenerate(
@@ -7,7 +7,7 @@ export async function initializeAutogenerate(
 	return {
 		addFourtuneFile(
 			filePath: string,
-			generator: FourtuneConfigAutogenerator<"fourtune">
+			generator: FourtuneAutoFileGenerator
 		) : undefined {
 
 		},
@@ -15,7 +15,7 @@ export async function initializeAutogenerate(
 		addSyntheticFile(
 			category: string,
 			filePath: string,
-			generator: FourtuneConfigAutogenerator<string>
+			generator: FourtuneAutoFileGenerator
 		) : undefined {
 			return undefined
 		}
