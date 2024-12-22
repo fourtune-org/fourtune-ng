@@ -6,11 +6,11 @@ export async function initializeInput(
 ) : Promise<FourtuneSession["input"]> {
 	return {
 		getSourceFiles() : FourtuneInputFile[] {
-			return []
+			return internalState.input.sourceFiles
 		},
 
 		getAssetFiles() : FourtuneInputFile[] {
-			return []
+			return internalState.input.assetFiles
 		}
 	}
 }
