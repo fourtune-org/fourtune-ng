@@ -1,4 +1,4 @@
-import type {FourtuneNodeAPIOptions, FourtuneConfig, FourtuneProject, FourtuneEvents} from "@fourtune-types/fourtune/v0"
+import type {FourtuneNodeAPIOptions, FourtuneConfig, FourtuneEvents} from "@fourtune-types/fourtune/v0"
 import type {_EmitEventType} from "@aniojs/event-emitter"
 import type {InternalState, FileToAutogenerate} from "#~src/InternalState.d.mts"
 import path from "node:path"
