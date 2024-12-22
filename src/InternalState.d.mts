@@ -7,6 +7,8 @@ import type {
 } from "@fourtune-types/fourtune/v0"
 import type {ScandirEntry} from "@aniojs/node-fs"
 
+import type {DefaultExportObject as FourtuneCore} from "@fourtune-types/core/v1"
+
 export type FileToAutogenerate = {
 	filePath: string,
 	category: string,
@@ -17,6 +19,10 @@ export type InternalState = {
 	project: {
 		root: string
 		config: FourtuneConfig
+	}
+
+	core: {
+		api: FourtuneCore
 	}
 
 	_emitEvent: _EmitEventType<FourtuneEvents>
