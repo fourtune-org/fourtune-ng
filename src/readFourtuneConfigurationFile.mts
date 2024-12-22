@@ -12,16 +12,20 @@ export async function readFourtuneConfigurationFile(
 		path.join(projectRoot, "fourtune.config.mjs")
 	)).default as FourtuneConfig
 
-	return {
-		...{
-			fourtune: {
-				defaultOptions: {}
-			},
-			realm: {
-				options: {}
-			},
-			autogenerate: {}
+	const defaults = {
+		fourtune: {
+			defaultOptions: {}
 		},
+
+		realm: {
+			options: {}
+		},
+
+		autogenerate: {}
+	}
+
+	return {
+		...defaults,
 		...cfg
 	}
 }
