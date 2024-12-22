@@ -10,11 +10,11 @@ export async function initialize(
 	projectConfig: FourtuneConfig,
 	_emitEvent: _EmitEventType<FourtuneEvents>
 ) : Promise<InternalState> {
-	const sourceFiles = await scandir(
+	const rawSourceFiles = await scandir(
 		path.join(projectRoot, "src")
 	)
 
-	const assetFiles = await scandir(
+	const rawAssetFiles = await scandir(
 		path.join(projectRoot, "assets"), {
 			allow_missing_dir: true
 		}
@@ -39,8 +39,8 @@ export async function initialize(
 		},
 
 		rawInput: {
-			sourceFiles,
-			assetFiles
+			sourceFiles: rawSourceFiles,
+			assetFiles: rawAssetFiles
 		},
 
 		input: {
